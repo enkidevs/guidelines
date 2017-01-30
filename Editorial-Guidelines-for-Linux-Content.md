@@ -1,5 +1,5 @@
 
-# # Editorial Guidelines for Linux Content
+# Editorial Guidelines for Linux Content
 
 These are a first pass at some basic editorial guidelines for Linux content based on what I saw after looking over all the Insights.
 
