@@ -24,10 +24,10 @@ touch .nojekyll
 git add .
 git commit -m 'update book'
 
-# Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
-chmod 600 deploy_key
+# Get the deploy key by using Travis's stored variables to decrypt github_deploy.enc
+chmod 600 github_deploy
 eval `ssh-agent -s`
-ssh-add deploy_key
+ssh-add github_deploy
 
 # Now that we're all set up, we can push.
 git push $SSH_REPO $TARGET_BRANCH --force
