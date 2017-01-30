@@ -22,7 +22,7 @@ git config user.email "mathieu@dutour.me"
 git checkout -b gh-pages
 touch .nojekyll
 git add .
-git commit -am 'update book'
+git commit -m 'update book'
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
 chmod 600 deploy_key
