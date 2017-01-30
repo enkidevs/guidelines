@@ -18,7 +18,7 @@ git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
 # Commit the "changes", i.e. the new version.
-cd ../_book
+cd _book
 git init
 git checkout -b gh-pages
 touch .nojekyll
