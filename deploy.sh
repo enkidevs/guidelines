@@ -14,12 +14,11 @@ REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
-git config user.name "Travis CI"
-git config user.email "$COMMIT_AUTHOR_EMAIL"
-
 # Commit the "changes", i.e. the new version.
 cd _book
 git init
+git config user.name "Travis CI"
+git config user.email "mathieu@dutour.me"
 git checkout -b gh-pages
 touch .nojekyll
 git add .
