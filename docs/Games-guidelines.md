@@ -1,5 +1,14 @@
 # Games guidelines
 
+## Example
+
+Here are some examples for each type of game:
+
+- [tetris](https://github.com/sagelabs/content/blob/master/Java/Threads%20&%20Locks/thread-safe.md)
+- [bugSpot](https://github.com/sagelabs/content/blob/master/JavaScript/Core/be-strict.md)
+- [fillTheGaps](https://github.com/sagelabs/content/blob/master/JavaScript/Ecmascript%202015/ecmascript-time-travel.md)
+
+
 # What is a game?
 
 An **Enki** game is a mobile-friendly,  **interactive** activity that puts the user’s knowledge to a test. It shouldn’t take more than a couple of minutes to finish, after which the user gets a score based on the number of correct answers.
