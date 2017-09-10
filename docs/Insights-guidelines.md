@@ -161,8 +161,6 @@ The levels should be specified in the following format:
 
       - beginner
 
-
-
 ## **Type [M]**
 
 Because games are fundamentally insights as well, this field is used to differentiate the type of game.
@@ -246,7 +244,27 @@ Tags are specified by a simple list such as:
       - polyfill
 
       - another-tag
+      
+Tags are also used to contain the new difficulty structure replacement:
 
+**Introduction**  
+If you are being introduced to the topic for the first time
+
+**New**  
+
+Recently added/gained traction feature
+
+**Workout**  
+
+Theory put into practice, a thinking exercise, problem sets
+
+**Deep**  
+
+Several workouts are required in order to understand this insight, theoretical or complex topics and questions
+
+**Obscura**  
+
+Stories, obscure details 
 
 ## **Notes**
 
@@ -256,8 +274,6 @@ These are not shown to the user
 Simply add:
 
     notes: 'here is my note'
-
-
 
 ## **Parent**
 
