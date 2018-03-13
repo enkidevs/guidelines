@@ -1,9 +1,1 @@
-# Enki
-
-This repo contains [guidelines](https://enkidevs.github.io/guidelines) useful when writing insights or game.
-
-
-
-If you’d like to try Enki, download the Enki app:
- - iOS: https://enki.com/ios
- - Android: https://enki.com/android
+This repo is deprecated. For the most recent guidelines on curriculum, visit the [Curriculum Wiki](https://github.com/enkidevs/curriculum/wiki)
