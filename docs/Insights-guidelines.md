@@ -60,70 +60,12 @@ These are shown in either **Revision-Workouts** or in **Quick-Tests**, their pur
 A single **insight** is made out of multiple fields.
 Some of these are **mandatory** (**M)**, while other’s can sometimes be omitted.
 
-These are:
+Insights are broken down into two sections, __YAML__ and __Markdown__.
 
-## **Topic [M]**
+The YAML section should be at the top of the document, wrapped with with three dashes and a new line: `---\n`, and contain the following properties.
 
-The **topic** usually marks the language or framework an insight is referring to/written in.
-
-Currently our **live** topics are:
-
-  - Git
-  - CSS
-  - JavaScript
-  - Java
-  - Python
-  - Linux
-
-However, there are more topics that haven’t been published yet.
-
-In our GitHub editor, every directory in the first hierarchy level represents a separate topic. For a topic to be valid, within its directory there must be a `README.md` indicating the topic’s description.
-
-To specify the **topic** of an insight simply ensure the insight’s file is placed within the right **topic** directory.
-
-
-## **Subtopic [M]**
-
-A **subtopic** represents a more specific area of content within which an insight can be placed.
-Every **subtopic** is in a child-parent relationship with a **topic**, this relationship being represented also through directory structure.
-Therefore, all **subtopics** of a topic are subdirectories within a topic directory.
-
-To have a valid **subtopic** you must also include a `README.md` file with the subtopic description inside its directory.
-
-For example under the `JavaScript` topic we can find various subtopics such as:
-
-- Ecmascript 2015
-- Core
-- Promises
-- React
-- Gulp
-- etc.
-
-Same goes to `Java` with:
-
-- Annotation
-- GUI
-- Testing
-- etc.
-
-To specify the subtopic of an insight simply ensure the insight’s file is placed within the right subtopic directory.
-
-
-## **Title [M]**
-
-The title should be able to express the main idea of the **content**.
-It must be between `4` and `120` characters long.
-
-  *Note*: Keep in mind that the title of the insight is also shown with the **RQ**. That being said, you should take care when writing those such that the title doesn’t directly give away the answer.
-
-The title can use `code blocks`  inside it.
-
-The title is specified at the top of the insight file preceded with an `#` :
-
-     # Custom `propType`'s to be required
-
-
-## **Author [M]**
+## YAML
+### **Author [M]**
 
 This field should specify the username of the user creating the insight.
 
@@ -132,7 +74,7 @@ The author is specified by the following line:
     author: catalin
 
 
-## **Levels [M]**
+### **Levels [M]**
 
 The **levels** mandatory field indicates the target audience of an insight, experience-wise.
 
@@ -162,8 +104,22 @@ The levels should be specified in the following format:
       - beginner
 
 
+### **Tags**
 
-## **Type [M]**
+This field is used to add specific tags to insights for later querying and filtering
+
+ex. For a python insight `python 3.0` could be a representative tag ..
+
+Tags are specified by a simple list such as:
+
+    tags:
+
+      - polyfill
+
+      - another-tag
+
+
+### **Type [M]**
 
 Because games are fundamentally insights as well, this field is used to differentiate the type of game.
 
@@ -177,9 +133,23 @@ This field should look like:
 
     type: normal
 
+### **Standards [M]**
 
+A Topic's [**standards**](https://github.com/sagelabs/standards/) represent major concepts within the topic that the user should understand. These standards are broken down into more granular ideas as **Objectives** (See [Standards Repo](https://github.com/sagelabs/standards/) for a comprehensive list of standards). All content should have an associated standard.
 
-## **inAlgoPool**
+Standards are defined with the following syntax:
+
+`<topic>.<standard>.<objective #>: <points value>`
+
+This insight, [Double and single quotes](https://raw.githubusercontent.com/enkidevs/curriculum/f4beeefe8bfdf191d6498dc35d0815ed57fa12e5/javascript/core/syntax/double-and-single-quotes.md), is associated with the `2nd` objective of the `javascript-syntax` standard in the `js` topic, so it will list `js.javascript-syntax.2` as one of its standards. 
+
+#### **Points**
+
+Points are a great way to **weight content within a standard**. 
+
+As a general rule, **Insights** are worth **10 points**, while more hands-on **Exercises** and other assessment are worth 1000 points.
+
+### **inAlgoPool**
 
 You can use the **inAlgoPool** boolean flag to state if an insight should be included in the random workout generations.
 Custom workouts can only be made up of insights with this field set to **false**.
@@ -190,7 +160,7 @@ To use it simply append:
 
 
 
-## **Category [M]**
+### **Category [M]**
 
 The category filed is also a mandatory field used to indicate the user the type of information he is presented with.
 
@@ -233,22 +203,7 @@ The **category** field should look like:
     category: good practice
 
 
-## **Tags**
-
-This field is used to add specific tags to insights for later querying and filtering
-
-ex. For a python insight `python 3.0` could be a representative tag ..
-
-Tags are specified by a simple list such as:
-
-    tags:
-
-      - polyfill
-
-      - another-tag
-
-
-## **Notes**
+### **Notes**
 
 The notes field is the place where internal observations can be made on an insight.
 These are not shown to the user
@@ -257,9 +212,7 @@ Simply add:
 
     notes: 'here is my note'
 
-
-
-## **Parent**
+### **Parent**
 
 This is an optional field used to express **weak** parent-child relationships between **insights**.
 
@@ -273,7 +226,7 @@ Example parent usage:
     parent: session-handling-in-express
 
 
-## **Links**
+### **Links**
 
 The links fields is not a mandatory one, but it’s often used to link insight to external resources that can act as either further reading on the topic discussed or the source of the information.
 
@@ -287,8 +240,22 @@ To attach **links**, the following format must be used:
     //  - >-
     //   [short-name](full-url){resource-type}
 
+## Markdown
 
-## **Content [M]**
+### **Title [M]**
+
+The title should be able to express the main idea of the **content**.
+It must be between `4` and `120` characters long.
+
+  *Note*: Keep in mind that the title of the insight is also shown with the **RQ**. That being said, you should take care when writing those such that the title doesn’t directly give away the answer.
+
+The title can use `code blocks`  inside it.
+
+The title is specified at the top of the insight file preceded with an `#` :
+
+     # Custom `propType`'s to be required
+
+### **Content [M]**
 
 The **content** is the main part of the **insight**, here going most of the information.
 The **content** of an insight is the place to provide more detail, explanation and examples.
@@ -317,7 +284,7 @@ The **content** of the insight is specified like:
 
 
 
-## **Practice Question**
+### **Practice Question**
 
 Even though **PQ**s are not mandatory, we want to keep a high rate of practical insights.
 That means most of the insight **should** have a **PQ**. (`>70%` of insights).
@@ -338,7 +305,7 @@ For example:
     *`lin_release`
 
 
-## **Revise Question**
+### **Revise Question**
 
 **RQ** is also a non-compulsory field, however we want a **RQ** for every insight.
 The percentage of insights with RQ we aim for is `100-99%` .
@@ -361,7 +328,7 @@ For example:
     *`lin_release`
 
 
-## **Footnotes**
+### **Footnotes**
 
 **Footnotes** are used to elaborate on some information that isn’t necessarily of interest to **all** users or necessarily relevant to the main topic of the insight.
 
@@ -394,14 +361,12 @@ To see the procedure of insight creation check [this](https://github.com/enkidev
 The full markdown format of an insight should look like:
 
 
-    # Insight Title
+    ---
     author: authorName
 
     levels:
 
       - basic
-
-    type: normal
 
     inAlgoPool: false
 
@@ -410,6 +375,11 @@ The full markdown format of an insight should look like:
     tags:
 
       - insightTag1
+
+    type: normal
+    
+    standards:
+      cs.idenfity-mcguffins.0: 10
 
     notes: 'a random note'
 
@@ -422,6 +392,7 @@ The full markdown format of an insight should look like:
 
     ---
     ## Content
+    # Insight Title
 
     Insight content goes here[1]
     ---
